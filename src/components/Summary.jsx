@@ -43,7 +43,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Meteors } from '@/components/magicui/meteors';
+import { Meteors } from '@/components/magicui/Meteors.jsx';
 
 const Summary = () => {
   return (

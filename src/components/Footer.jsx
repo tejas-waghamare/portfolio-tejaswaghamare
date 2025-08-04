@@ -42,7 +42,7 @@ const Footer = () => {
           href="/TejasWaghamareResume.pdf"
           download
           whileHover={{ scale: 1.1 }}
-          className="bg-red-400 text-gray-50 px-6 py-3 rounded-full font-semibold hover:bg-red-500 transition-all duration-300 shadow-md"
+          className="bg-red-600 text-gray-50 px-6 py-3 rounded-full font-semibold hover:bg-red-500 transition-all duration-300 shadow-md"
         >
           Download Resume
         </motion.a>

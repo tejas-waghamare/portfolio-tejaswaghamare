@@ -1,13 +1,23 @@
-# React + Vite
+# 🌐 Tejas Waghamare — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and visually engaging developer portfolio built with **React.js**, **Tailwind CSS**, **Framer Motion**, and **Magic UI**.  
+Live here 👉 [portfolio-tejaswaghamare.vercel.app](https://portfolio-tejaswaghamare-3s2p.vercel.app)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📸 Preview
 
-## Expanding the ESLint configuration
+![Portfolio Preview](https://portfolio-tejaswaghamare-3s2p.vercel.app/preview.png) <!-- Optional: Replace with actual screenshot -->
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# portfolio-tejaswaghamare" 
+---
+
+## 🚀 Tech Stack
+
+- ⚛️ **React.js** — Component-based architecture
+- 💨 **Tailwind CSS** — Utility-first styling via CDN
+- 🎞 **Framer Motion** — Smooth animations and transitions
+- 🪄 **Magic UI** — Custom UI effects like animated backgrounds
+- 🔗 **React Router DOM** — Client-side routing
+- 🎨 **Type Animation** — Typing effect for hero section
+- 📦 **pnpm** — Fast and efficient package manager
+- 🔧 **Vite** — Lightning-fast dev/build tool

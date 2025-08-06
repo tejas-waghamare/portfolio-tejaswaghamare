@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import React from 'react';
-// import MyResume from '../assets/TejasWaghamareResume.pdf';
+
 
 const Footer = () => {
   return (
@@ -39,8 +39,8 @@ const Footer = () => {
           </motion.a>
         </div>
         <motion.a
-          href="/TejasWaghamareResume.pdf"
-          download
+          href="/Tejas_Waghamare_MERNStack.pdf"
+          download="TejasWaghamareResume.pdf"
           whileHover={{ scale: 1.1 }}
           className="bg-red-600 text-gray-50 px-6 py-3 rounded-full font-semibold hover:bg-red-500 transition-all duration-300 shadow-md"
         >

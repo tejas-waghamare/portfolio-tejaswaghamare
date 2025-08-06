@@ -189,7 +189,7 @@ const Hero = () => {
         initial={{ y: 40, opacity: 0, scale: 0.95 }}
         animate={{ y: 0, opacity: 1, scale: 1 }}
         transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
-        className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif bg-gradient-to-br from-sky-600 via-fuchsia-400 to-indigo-300 bg-clip-text text-transparent text-stroke tracking-wide mb-4"
+        className="text-4xl sm:text-5xl p-2 md:text-6xl font-bold font-serif bg-gradient-to-br from-sky-600 via-fuchsia-400 to-indigo-300 bg-clip-text text-transparent text-stroke tracking-wide mb-4"
       >
         Tejas Waghamare
       </motion.h1>

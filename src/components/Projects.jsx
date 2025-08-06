@@ -15,6 +15,8 @@ import landing2 from '../assets/landing2.png';
 import GaavLogin from '../assets/mazegavlogin.png';
 import gavuser from '../assets/gavuser.png';
 import gavgram from '../assets/gavgram.png';
+import Min1 from '../assets/Min1.png';
+import Min2 from '../assets/Min2.png';
 
 const Projects = () => {
   const projects = [
@@ -22,7 +24,7 @@ const Projects = () => {
       title: 'Gemini Clone',
       link: 'https://gemini-clone-frontend-4in8.onrender.com',
       images: [gemini, geminiLogin, geminiSignup],
-      period: 'April 2024 - May 2024',
+      period: 'April 2025 - May 2025',
       details: [
         'Developed a responsive, single-page AI chatbot using React.js for frontend and Node.js/Express.js for backend.',
         'Integrated OpenAI GPT-4 API for intelligent, context-aware conversational responses.',
@@ -30,14 +32,25 @@ const Projects = () => {
       ],
     },
     {
-      title: 'Mazegaav Portfolio',
+      title: 'माझे गाव',
       link: 'https://frontend-mazegaav.vercel.app/',
       images: [GaavLogin, gavuser, gavgram],
-      period: 'September 2024 - October 2024',
+      period: 'May 2025',
       details: [
-        'Created a personal portfolio showcasing projects using Next.js and Tailwind CSS.',
-        'Implemented responsive layouts and modern design aesthetics.',
-        'Deployed on Vercel for fast and reliable hosting.',
+        'Gives The Information About My Village, Helps Locals Connect, and Provides Updates.',
+        'Allows users to create accounts, post updates, and share photos.',
+        'Villagers can post their issues, and admins can respond to them.',
+      ],
+    },
+    {
+      title: 'MiniLinkedIn',
+      link: 'https://linkedin-mini-frontend-linkedin.onrender.com',
+      images: [Min1 , Min2],
+      period: 'August 2025',
+      details: [
+        'Mini LinkedIn is a sleek, mobile-responsive social media platform inspired by LinkedIn.',
+        'Allows users to create profiles, connect with others, and share posts.',
+        'User can edit their profile, add skills, and Posts.',
       ],
     },
     {
@@ -55,7 +68,7 @@ const Projects = () => {
       title: 'Reptile Interactive Cursor',
       link: 'https://tejas-waghamare.github.io/Reptile-Interactive-Cursor/',
       images: [reptile],
-      period: 'January 2024 - February 2024',
+      period: 'July 2025',
       details: [
         'Created an interactive web feature where a creature follows the mouse cursor using JavaScript.',
         'Implemented smooth animations for an engaging user experience.',
@@ -66,7 +79,7 @@ const Projects = () => {
       title: 'Recurring Scheduler',
       link: 'https://date-picker-five-sand.vercel.app',
       images: [scheduler],
-      period: 'March 2024 - April 2024',
+      period: 'July 2025',
       details: [
         'Built a recurring schedule interface with a daily recurrence feature using Next.js.',
         'Included a schedule preview and stop condition functionality.',
@@ -77,7 +90,7 @@ const Projects = () => {
       title: 'Drag and Drop Website Builder',
       link: 'https://tejas-waghamare.github.io/drag-and-drop-builder/',
       images: [dragDrop],
-      period: 'May 2024 - June 2024',
+      period: 'June 2025',
       details: [
         'Developed a drag-and-drop interface for building websites using React.js.',
         'Enabled element selection and property customization for user-friendly design.',
@@ -88,7 +101,7 @@ const Projects = () => {
       title: 'Landing Page UI',
       link: 'https://landing-page-ui-omega.vercel.app',
       images: [landing1, landing2],
-      period: 'July 2024 - August 2024',
+      period: 'July 2025',
       details: [
         'Designed a sleek landing page UI with modern design principles using Next.js.',
         'Focused on responsive design and high-quality visuals.',
@@ -155,7 +168,7 @@ const Projects = () => {
                   key={currentImageIndices[index]}
                   src={project.images[currentImageIndices[index]]}
                   alt={`${project.title} screenshot ${currentImageIndices[index] + 1}`}
-                  className="w-full h-full object-cover p-2 rounded-md border border-gray-700/50 group-hover:border-blue-400 group-hover:shadow-[0_0_10px_rgba(59,130,246,0.5)]"
+                  className="w-full h-50 object-cover p-1 rounded-md border border-gray-700/50 group-hover:border-blue-400 group-hover:shadow-[0_0_10px_rgba(59,130,246,0.5)]"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
@@ -212,7 +225,7 @@ const Projects = () => {
                 rel="noopener noreferrer"
                 className="text-blue-400 hover:text-cyan-400 underline decoration-blue-400/50 hover:decoration-cyan-400"
               >
-                {project.link.includes('github') ? 'GitHub Link' : 'Live Demo'}
+                {project.link.includes('github') ? 'GitHub Link' : 'Click👉 To get Live Demo'}
               </a>{' '}
               | {project.period}
             </motion.p>

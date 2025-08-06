@@ -149,7 +149,7 @@
 // export default Navbar;
 
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaBars, FaTimes, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import profile from '@/assets/myprof.JPG';
@@ -173,7 +173,7 @@ const Navbar = () => {
       transition={{ duration: 0.7 }}
       className="sticky top-0 z-50 bg-purple-900/90 backdrop-blur-md shadow-md"
     >
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <div className=" max-w-7xl mx-auto px-3  sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo and Name */}
           <motion.div className="flex items-center space-x-2" whileHover={{ scale: 1.05 }}>
@@ -183,7 +183,7 @@ const Navbar = () => {
               className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-red-400"
             />
             <h1 className="text-base sm:text-lg font-bold text-red-400 hover:text-red-500 transition-colors duration-300">
-              Tejas Waghamare
+              <Link to='/' >Tejas Waghamare</Link>
             </h1>
           </motion.div>
 

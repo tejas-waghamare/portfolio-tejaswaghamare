@@ -1,13 +1,7 @@
 # 🌐 Tejas Waghamare — Developer Portfolio
 
 A modern, responsive, and visually engaging developer portfolio built with **React.js**, **Tailwind CSS**, **Framer Motion**, and **Magic UI**.  
-Live here 👉 [portfolio-tejaswaghamare.vercel.app](https://portfolio-tejaswaghamare-3s2p.vercel.app)
-
----
-
-## 📸 Preview
-
-![Portfolio Preview](https://portfolio-tejaswaghamare-3s2p.vercel.app/preview.png) <!-- Optional: Replace with actual screenshot -->
+Live here 👉 [portfolio-tejaswaghamare.vercel.app](https://portfolio-tejaswaghamare.vercel.app/)
 
 ---
 

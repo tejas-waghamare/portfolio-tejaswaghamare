@@ -17,7 +17,8 @@ import gavuser from '../assets/gavuser.png';
 import gavgram from '../assets/gavgram.png';
 import Min1 from '../assets/Min1.png';
 import Min2 from '../assets/Min2.png';
-
+import org from '../assets/org.png';
+import pixedge from '../assets/pixedge.png';
 const Projects = () => {
   const projects = [
     {
@@ -51,6 +52,28 @@ const Projects = () => {
         'Mini LinkedIn is a sleek, mobile-responsive social media platform inspired by LinkedIn.',
         'Allows users to create profiles, connect with others, and share posts.',
         'User can edit their profile, add skills, and Posts.',
+      ],
+    },
+    {
+      title: 'OmrautGraphics -Static Website',
+      link: 'https://omrautgraphics.com/',
+      images: [org],
+      period: 'December 2025',
+      details: [
+        'It is a static website for Omraut Graphics, a graphic design Startup.',
+        'Helps users explore services, view portfolios, and contact the Creator of ORG.',
+        'Built with HTML, CSS, and JavaScript for a responsive and engaging user experience.',
+      ],
+    },
+    {
+      title: 'PixEdge.in - A Company Website',
+      link: 'https://www.pixedge.in/',
+      images: [pixedge],
+      period: 'June 2025',
+      details: [
+        'It is a static website for PixEdge.in, a Camera Vision Company .',
+        'Helps users explore services, view portfolios, and contact the Company.',
+        'Built with HTML, CSS, and JavaScript for a responsive and engaging user experience.',
       ],
     },
     {

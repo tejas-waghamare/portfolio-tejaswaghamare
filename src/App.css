@@ -10,3 +10,15 @@
   animation-name: twinkle;
   animation-iteration-count: infinite;
 }
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 5; }
+}
+
+.animate-twinkle {
+  animation: twinkle var(--duration, 1s) infinite ease-in-out;
+}
+
+
+
+

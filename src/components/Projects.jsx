@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -19,6 +20,7 @@ import Min1 from '../assets/Min1.png';
 import Min2 from '../assets/Min2.png';
 import org from '../assets/org.png';
 import pixedge from '../assets/pixedge.png';
+
 const Projects = () => {
   const projects = [
     {
@@ -159,33 +161,137 @@ const Projects = () => {
     );
   };
 
+  // Different types of particles
+  const particleTypes = [
+    { type: 'circle', size: 'h-1 w-1', color: 'bg-blue-400/60' },
+    { type: 'circle', size: 'h-1.5 w-1.5', color: 'bg-cyan-400/50' },
+    { type: 'circle', size: 'h-2 w-2', color: 'bg-purple-400/40' },
+    { type: 'square', size: 'h-1 w-1', color: 'bg-blue-300/30' },
+    { type: 'square', size: 'h-1.5 w-1.5', color: 'bg-cyan-300/20' },
+    { type: 'triangle', size: 'h-2 w-2', color: 'border-blue-400/40' },
+    { type: 'hexagon', size: 'h-2 w-2', color: 'bg-cyan-400/30' },
+    { type: 'star', size: 'h-2 w-2', color: 'text-yellow-300/50' },
+  ];
+
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="bg-gradient-to-b from-black to-gray-950 py-10 px-2 sm:px-6 lg:px-8 rounded-xl shadow-2xl max-w-full mx-auto"
+      className="relative bg-gradient-to-b from-black via-slate-900 to-sky-950 py-20 px-4 sm:px-8 lg:px-20 rounded-xl shadow-2xl max-w-full mx-auto overflow-hidden"
     >
+      {/* Different Particle Effects */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        {/* Small twinkling stars */}
+        {[...Array(30)].map((_, i) => {
+          const particle = particleTypes[i % particleTypes.length];
+          return (
+            <div
+              key={`star-${i}`}
+              className={`absolute animate-twinkle ${
+                particle.type === 'circle' 
+                  ? `rounded-full ${particle.size} ${particle.color}`
+                  : particle.type === 'square'
+                  ? `${particle.size} ${particle.color}`
+                  : particle.type === 'triangle'
+                  ? `w-0 h-0 border-l-[6px] border-r-[6px] border-b-[10px] ${particle.color} border-transparent`
+                  : particle.type === 'hexagon'
+                  ? `clip-hexagon ${particle.size} ${particle.color}`
+                  : particle.type === 'star'
+                  ? `text-2xl ${particle.color}`
+                  : ''
+              }`}
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${Math.random() * 3 + 2}s`,
+              }}
+            >
+              {particle.type === 'star' && '★'}
+            </div>
+          );
+        })}
+
+        {/* Floating code brackets */}
+        {[...Array(15)].map((_, i) => (
+          <div
+            key={`code-${i}`}
+            className="absolute text-blue-300/20 animate-float"
+            style={{
+              top: `${10 + i * 15}%`,
+              left: `${5 + i * 10}%`,
+              fontSize: `${1.5 + Math.random() * 1}rem`,
+              animationDelay: `${i * 0.5}s`,
+              animationDuration: `${15 + i * 2}s`,
+            }}
+          >
+            {'</>'}
+          </div>
+        ))}
+
+        {/* Glowing orbs */}
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={`orb-${i}`}
+            className="absolute h-4 w-4 rounded-full animate-pulse-glow"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              background: `radial-gradient(circle, rgba(59, 130, 246, 0.4), transparent)`,
+              animationDelay: `${i * 0.7}s`,
+              animationDuration: `${3 + Math.random() * 2}s`,
+              filter: 'blur(1px)',
+            }}
+          />
+        ))}
+
+        {/* Animated lines/waves */}
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500/30 to-transparent animate-wave" />
+        <div className="absolute top-1/4 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent animate-wave-reverse" />
+
+        {/* Floating particles with different movements */}
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={`float-${i}`}
+            className={`absolute h-1 w-1 rounded-full ${
+              i % 3 === 0 ? 'bg-blue-400/40' : 
+              i % 3 === 1 ? 'bg-cyan-400/30' : 'bg-purple-400/20'
+            } animate-float-slow`}
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 10}s`,
+              animationDuration: `${20 + Math.random() * 10}s`,
+            }}
+          />
+        ))}
+
+        {/* Mouse-following light effect (static version) */}
+        <div className="absolute top-1/3 left-1/4 w-64 h-64 rounded-full bg-blue-500/5 blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 rounded-full bg-cyan-500/5 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      </div>
+
       <motion.h2
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.1, duration: 0.6, type: 'spring', stiffness: 120 }}
-        className="text-4xl sm:text-5xl p-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 text-center mb-12 tracking-tight drop-shadow-[0_0_10px_rgba(59,130,246,0.7)]"
+        className="relative text-4xl sm:text-5xl p-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 text-center mb-16 tracking-tight drop-shadow-[0_0_10px_rgba(59,130,246,0.7)] z-10"
       >
         Projects
       </motion.h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto opacity-80">
         {projects.map((project, index) => (
           <motion.div
             key={project.title}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2, duration: 0.7, type: 'spring', stiffness: 80 }}
-            whileHover={{ scale: 1.05, boxShadow: '0 0 25px rgba(59, 130, 246, 0.8)' }}
-            className="p-4 sm:p-6 bg-gray-900/90 rounded-xl border border-transparent bg-gradient-to-r from-blue-400/20 to-cyan-400/20 hover:border-blue-400 transition-all duration-300 group"
+            whileHover={{ scale: 1.05 }}
+            className="p-6 bg-white/10 backdrop-blur-md rounded-xl border border-gray-700/60 shadow-xl hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 group"
           >
-            <div className="relative w-full h-52 sm:h-64 overflow-hidden rounded-md mb-4">
+            <div className="relative w-full h-52 sm:h-64 overflow-hidden rounded-md mb-6">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={currentImageIndices[index]}
@@ -201,29 +307,31 @@ const Projects = () => {
               </AnimatePresence>
 
               {project.images.length > 1 && (
-                <div className="absolute bottom-2 left-0 right-0 flex justify-between items-center px-4">
+                <div className="absolute bottom-3 left-0 right-0 flex justify-between items-center px-4">
                   <button
                     onClick={() => handlePrevImage(index)}
-                    className="p-2 sm:p-2.5 bg-gray-800/80 rounded-full text-blue-400 hover:text-cyan-400"
+                    className="p-2.5 bg-gray-900/80 backdrop-blur-sm rounded-full text-blue-400 hover:text-cyan-400 hover:bg-gray-800/90 transition-colors"
                     aria-label="Previous image"
                   >
                     <FaArrowLeft />
                   </button>
-                  <div className="flex space-x-1 sm:space-x-2">
+                  <div className="flex space-x-2">
                     {project.images.map((_, i) => (
                       <button
                         key={i}
                         onClick={() => handleDotClick(index, i)}
-                        className={`w-2 h-2 rounded-full ${
-                          currentImageIndices[index] === i ? 'bg-blue-400' : 'bg-gray-600'
-                        } hover:bg-cyan-400`}
+                        className={`w-2.5 h-2.5 rounded-full transition-all ${
+                          currentImageIndices[index] === i 
+                            ? 'bg-blue-400 scale-125' 
+                            : 'bg-gray-600/70 hover:bg-gray-500'
+                        }`}
                         aria-label={`View image ${i + 1}`}
                       />
                     ))}
                   </div>
                   <button
                     onClick={() => handleNextImage(index)}
-                    className="p-2 sm:p-2.5 bg-gray-800/80 rounded-full text-blue-400 hover:text-cyan-400"
+                    className="p-2.5 bg-gray-900/80 backdrop-blur-sm rounded-full text-blue-400 hover:text-cyan-400 hover:bg-gray-800/90 transition-colors"
                     aria-label="Next image"
                   >
                     <FaArrowRight />
@@ -232,7 +340,7 @@ const Projects = () => {
               )}
             </div>
 
-            <h3 className="text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 text-center mb-2">
+            <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 text-center mb-3">
               {project.title}
             </h3>
 
@@ -240,27 +348,27 @@ const Projects = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.2 + 0.3, duration: 0.5 }}
-              className="text-gray-200 text-center text-sm sm:text-base mb-3"
+              className="text-gray-200 text-center text-sm sm:text-base mb-4"
             >
               <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:text-cyan-400 underline decoration-blue-400/50 hover:decoration-cyan-400"
+                className="text-blue-400 hover:text-cyan-400 underline decoration-blue-400/50 hover:decoration-cyan-400 transition-colors"
               >
                 {project.link.includes('github') ? 'GitHub Link' : 'Click👉 To get Live Demo'}
               </a>{' '}
-              | {project.period}
+              | <span className="text-cyan-300">{project.period}</span>
             </motion.p>
 
-            <ul className="list-disc pl-4 sm:pl-5 text-gray-200 text-sm sm:text-base">
+            <ul className="list-disc pl-5 text-gray-200 text-sm sm:text-base space-y-2">
               {project.details.map((detail, i) => (
                 <motion.li
                   key={i}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.2 + 0.4 + i * 0.1, duration: 0.5 }}
-                  className="mb-1"
+                  className="leading-relaxed"
                 >
                   {detail}
                 </motion.li>
